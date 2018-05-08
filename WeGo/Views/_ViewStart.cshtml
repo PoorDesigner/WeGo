@@ -1,3 +1,9 @@
-﻿@{
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+else
+{
+    Layout = "~/Views/Shared/_PreLoginLayout.cshtml";
 }
