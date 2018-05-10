@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -8,6 +10,8 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using Microsoft.Web.Mvc;
+using Newtonsoft.Json;
 using WeGo.Models;
 
 namespace WeGo.Controllers
@@ -15,6 +19,7 @@ namespace WeGo.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        #region InBuilt
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -57,8 +62,15 @@ namespace WeGo.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            ViewBag.ReturnUrl = returnUrl;
-            return View();
+            if (Request.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return View();
+            }
+            
         }
 
         //
@@ -423,6 +435,8 @@ namespace WeGo.Controllers
             base.Dispose(disposing);
         }
 
+
+        #endregion InBuilt
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
@@ -481,5 +495,56 @@ namespace WeGo.Controllers
             }
         }
         #endregion
+
+        //
+        // GET: /Account/Login
+        [Authorize]
+        public ActionResult AddPOS()
+        {
+
+            var wizard = new WizardViewModel();
+            wizard.Initialize();
+            return View(wizard);
+        }
+
+
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult AddPOS(
+        [Deserialize] WizardViewModel wizard,
+        IStepViewModel step
+    )
+        {
+            wizard.Steps[wizard.CurrentStepIndex] = step;
+            if (ModelState.IsValid)
+            {
+                if (!string.IsNullOrEmpty(Request["next"]))
+                {
+                    wizard.CurrentStepIndex++;
+                }
+                else if (!string.IsNullOrEmpty(Request["prev"]))
+                {
+                    wizard.CurrentStepIndex--;
+                }
+                else
+                {
+                    // TODO: we have finished: all the step partial
+                    // view models have passed validation => map them
+                    // back to the domain model and do some processing with
+                    // the results
+
+                    return Content("thanks for filling this form", "text/plain");
+                }
+            }
+            else if (!string.IsNullOrEmpty(Request["prev"]))
+            {
+                // Even if validation failed we allow the user to
+                // navigate to previous steps
+                wizard.CurrentStepIndex--;
+            }
+            return View(wizard);
+        }
+
     }
 }

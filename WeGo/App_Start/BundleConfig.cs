@@ -28,8 +28,8 @@ namespace WeGo
                       ));
 
             bundles.Add(new ScriptBundle("~/bundles/themeappjavascript").Include(
-
-                        "~/Scripts/appzia/app.js",
+                      "~/Scripts/appzia/fastclick.js",
+                      "~/Scripts/appzia/app.js",
                       "~/Scripts/appzia/dashboard.js",
                       "~/Scripts/appzia/detect.js",
                       "~/Scripts/appzia/jquery.nicescroll.js",
@@ -38,7 +38,8 @@ namespace WeGo
                       "~/Scripts/appzia/morris.min.js",
                       "~/Scripts/appzia/wave.js",
                       "~/Scripts/appzia/wow.min.js",
-                      "~/Scripts/appzia/raphael-min.js"));
+                      "~/Scripts/appzia/raphael-min.js",
+                      "~/Scripts/appzia/jquery.bootstrap.wizard.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

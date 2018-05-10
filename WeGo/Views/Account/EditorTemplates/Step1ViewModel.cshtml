@@ -1,0 +1,20 @@
+﻿@model WeGo.Models.Step1ViewModel
+
+<div>
+    <h4>Step1ViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Foo)
+        </dt>
+
+        <dd>
+            @Html.TextBoxFor(x => x.Foo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

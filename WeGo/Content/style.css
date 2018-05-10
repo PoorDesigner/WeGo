@@ -12,9 +12,12 @@
 --------------------------------------------------------- */
 /* Bootstrap */
 @import url(../css/animate.css);
+
+
 .gaugejs-wrap {
-  position: relative;
-  margin: 0 auto; }
+    position: relative;
+    margin: 0 auto;
+}
   .gaugejs-wrap canvas.gaugejs {
     width: 100% !important;
     height: auto !important; }
@@ -2238,3 +2241,5 @@ header .form-inline {
           padding: 5px; } }
 
 /*# sourceMappingURL=style.css.map */
+
+

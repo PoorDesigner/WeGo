@@ -3691,3 +3691,10 @@ File: Responsive
     display: none !important;
   }
 }
+
+
+.stepPills {
+    margin: 10px !important;
+    background: #007ACC !important;
+    padding: 12px 17px 10px 30px;
+}
