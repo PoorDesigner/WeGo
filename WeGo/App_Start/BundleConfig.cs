@@ -22,37 +22,24 @@ namespace WeGo
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"
-
-
-
                       ));
 
-            bundles.Add(new ScriptBundle("~/bundles/themeappjavascript").Include(
-                      "~/Scripts/appzia/fastclick.js",
-                      "~/Scripts/appzia/app.js",
-                      "~/Scripts/appzia/dashboard.js",
-                      "~/Scripts/appzia/detect.js",
-                      "~/Scripts/appzia/jquery.nicescroll.js",
-                      "~/Scripts/appzia/jquery..blockUIjs",
-                      "~/Scripts/appzia/jquery.slimscroll.js",
-                      "~/Scripts/appzia/morris.min.js",
-                      "~/Scripts/appzia/wave.js",
-                      "~/Scripts/appzia/wow.min.js",
-                      "~/Scripts/appzia/raphael-min.js",
-                      "~/Scripts/appzia/jquery.bootstrap.wizard.js"));
+            bundles.Add(new ScriptBundle("~/bundles/colorlibjs").Include(
+                      "~/Scripts/colorlib/popper.min.js",
+                      "~/Scripts/colorlib/plugins.js",
+                      "~/Scripts/colorlib/main.js"
+                      ));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
-
-            bundles.Add(new StyleBundle("~/Content/themeappcss").Include(
-
-                     "~/Content/Appzia/icons.css",
-                     "~/Content/Appzia/morris.css",
-                     "~/Content/Appzia/style.css"
-
-
+            bundles.Add(new StyleBundle("~/bundles/colorlibcss").Include(
+                     "~/Content/colorlib/font-awesome.min.css",
+                     "~/Content/colorlib/theme.css",
+                     "~/Content/colorlib/metisMenu.css"
                      ));
+          
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/bootstrap.css"));
+
+          
         }
     }
 }

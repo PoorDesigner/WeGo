@@ -215,6 +215,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IStepViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Misc.cs" />
     <Compile Include="Models\StepViewModelBinder.cs" />
     <Compile Include="Models\StepViewModels.cs" />
     <Compile Include="Models\WizardViewModel.cs" />
@@ -222,24 +223,15 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Appzia\icons.css" />
-    <Content Include="Content\Appzia\morris.css" />
-    <Content Include="Content\Appzia\style.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\cs-skin-elastic.css" />
-    <Content Include="Content\flag-icon.min.css" />
-    <Content Include="Content\font-awesome.css" />
-    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\colorlib\metisMenu.css" />
+    <Content Include="Content\colorlib\font-awesome.min.css" />
+    <Content Include="Content\colorlib\theme.css" />
     <Content Include="Content\images\logo.jpg" />
     <Content Include="Content\images\user.png" />
-    <Content Include="Content\normalize.css" />
-    <Content Include="Content\style.css" />
-    <Content Include="Content\themify-icons.css" />
-    <Content Include="Content\widgets.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\appzia\app.js" />
     <Content Include="Scripts\appzia\dashborad.js" />
     <Content Include="Scripts\appzia\detect.js" />
@@ -266,6 +258,9 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\ionicons.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\colorlib\main.js" />
+    <Content Include="Scripts\colorlib\plugins.js" />
+    <Content Include="Scripts\colorlib\popper.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -314,7 +309,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_PreLoginLayout.cshtml" />
     <Content Include="Views\Account\AddPOS.cshtml" />
-    <Content Include="Views\Account\EditorTemplates\Step1ViewModel.cshtml" />
+    <Content Include="Views\Account\EditorTemplates\AccountViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

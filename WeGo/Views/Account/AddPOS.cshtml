@@ -5,10 +5,22 @@
     var currentStep = Model.Steps[Model.CurrentStepIndex];
 }
 
-<h3>Step @(Model.CurrentStepIndex + 1) out of @Model.Steps.Count</h3>
 
 @using (Html.BeginForm())
 {
+    if (Model.CurrentStepIndex > 0)
+    {
+        <input type="submit" value="Previous" name="prev" />
+    }
+
+    if (Model.CurrentStepIndex < Model.Steps.Count - 1)
+    {
+        <input type="submit" value="Next" name="next" />
+    }
+    else
+    {
+        <input type="submit" value="Finish" name="finish" />
+    }
     @Html.Serialize("wizard", Model)
 
     @Html.Hidden("StepType", Model.Steps[Model.CurrentStepIndex].GetType())
